@@ -1,0 +1,84 @@
+﻿@model IEnumerable<ICS.Models.ORDER_HEADER>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.iPOID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.supplier)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cReference)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.iFactoryID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.iSupplierID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cRemarks)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.bRecieved)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.bDeleted)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.iPOID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dDate)
+        </td>
+        <td>
+            <a href="@Url.Action("Details", "Supplier", new { id=item.iSupplierID})">
+            @Html.DisplayFor(modelItem => item.supplier.cSupplierName)
+            </a>
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cReference)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.iFactoryID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.iSupplierID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cRemarks)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.bRecieved)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.bDeleted)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new {  id=item.iPOID  }) |
+            @Html.ActionLink("Print", "Print", new {  id=item.iPOID  }) |
+            @Html.ActionLink("Delete", "Delete", new {  id=item.iPOID }) |
+            @Html.ActionLink("Make GRN", "CreateFromPO", "GRN", new { id = item.iPOID }, new { @class = "btn" })
+        </td>
+    </tr>
+}
+
+</table>

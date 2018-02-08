@@ -1,0 +1,40 @@
+﻿@model ICS.Models.FACTORY
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<fieldset>
+    <legend>FACTORY</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.iFactoryID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.iFactoryID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.cFactoryCode)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.cFactoryCode)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.cFactoryDescription)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.cFactoryDescription)
+    </div>
+</fieldset>
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    <p>
+        <input type="submit" value="Delete" /> |
+        @Html.ActionLink("Back to List", "Index",new { id = Model.iFactoryID })
+    </p>
+}

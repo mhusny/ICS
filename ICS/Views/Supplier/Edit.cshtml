@@ -1,0 +1,106 @@
+﻿@model ICS.Models.SUPPLIER
+
+@{
+    ViewBag.Title = "Edit";
+}
+<div style="font-family:Arial">
+<h2>Edit</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>SUPPLIER</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.iSupplierID)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.iSupplierID)
+            @Html.ValidationMessageFor(model => model.iSupplierID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.cSupplierCode)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.cSupplierCode)
+            @Html.ValidationMessageFor(model => model.cSupplierCode)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.cSupplierName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.cSupplierName)
+            @Html.ValidationMessageFor(model => model.cSupplierName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.cAddress1)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.cAddress1)
+            @Html.ValidationMessageFor(model => model.cAddress1)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.cAddress2)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.cAddress2)
+            @Html.ValidationMessageFor(model => model.cAddress2)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.cAddress3)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.cAddress3)
+            @Html.ValidationMessageFor(model => model.cAddress3)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.cAddress4)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.cAddress4)
+            @Html.ValidationMessageFor(model => model.cAddress4)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.cAddress5)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.cAddress5)
+            @Html.ValidationMessageFor(model => model.cAddress5)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.cContactName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.cContactName)
+            @Html.ValidationMessageFor(model => model.cContactName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.cContactDetails)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.cContactDetails)
+            @Html.ValidationMessageFor(model => model.cContactDetails)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+</div>

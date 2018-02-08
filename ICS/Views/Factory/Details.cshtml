@@ -1,0 +1,36 @@
+﻿@model ICS.Models.FACTORY
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>FACTORY</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.iFactoryID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.iFactoryID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.cFactoryCode)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.cFactoryCode)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.cFactoryDescription)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.cFactoryDescription)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new {  id=Model.iFactoryID  }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

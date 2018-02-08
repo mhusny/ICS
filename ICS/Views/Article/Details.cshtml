@@ -1,0 +1,78 @@
+﻿@model ICS.Models.ARTICLE
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>ARTICLE</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.iArticleID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.iArticleID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.cArticleCode)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.cArticleCode)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.cArticleDescription1)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.cArticleDescription1)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.cArticleDescription2)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.cArticleDescription2)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.iSeasonID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.iSeasonID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.cStyleDescription)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.cStyleDescription)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.bActive)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.bActive)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.cUOM)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.cUOM)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.dQtyInStock)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.dQtyInStock)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new {  id=Model.iArticleID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

@@ -1,0 +1,87 @@
+﻿@model IEnumerable<ICS.Models.GRN_HEADER>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.iGRNID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dDate)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cReference)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.iPOID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.iFactoryID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cRemarks)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.bReceived)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dValue)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.bUpdated)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.bDeleted)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.iGRNID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dDate)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cReference)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.iPOID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.iFactoryID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cRemarks)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.bReceived)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.dValue)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.bUpdated)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.bDeleted)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new {  id=item.iGRNID  }) |
+            @Html.ActionLink("Details", "Details", new {  id=item.iGRNID  }) |
+            @Html.ActionLink("Delete", "Delete", new {  id=item.iGRNID  })
+        </td>
+    </tr>
+}
+
+</table>

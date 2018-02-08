@@ -1,0 +1,19 @@
+﻿@model ICS.Models.ORDER_DETAIL
+
+@{
+    ViewBag.Title = "Edit";
+}
+
+<h2>Edit</h2>
+
+@using (Html.BeginForm("Edit", "OrderDetail"))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+      <text>
+    @{Html.RenderPartial("CreateOrEditOrderDetailPartial", Model);}
+    </text>
+}
+
+

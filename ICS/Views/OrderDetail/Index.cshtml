@@ -1,0 +1,81 @@
+﻿@model IEnumerable<ICS.Models.ORDER_DETAIL>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+
+@*<p>
+    @Html.ActionLink("Create New", "Create")
+</p>*@
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.idPOLine)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.iPOID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.iArticleID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cArticleDescription2)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dOrderQuantity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dRecievedQuantity)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dUnitPrice)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.dValue)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    var invoiceDetail = "invoiceDetail" + item.idPOLine;
+    <tr id="@invoiceDetail">
+        <td>
+            @Html.DisplayFor(modelItem => item.idPOLine)
+        </td>
+        <td nowrap>
+            @Html.DisplayFor(modelItem => item.iPOID)
+        </td>
+        <td nowrap>
+            @Html.DisplayFor(modelItem => item.iArticleID)
+        </td>
+        <td nowrap>
+            @Html.DisplayFor(modelItem => item.cArticleDescription2)
+        </td>
+        <td nowrap>
+            @Html.DisplayFor(modelItem => item.dOrderQuantity)
+        </td>
+        <td nowrap>
+            @Html.DisplayFor(modelItem => item.dRecievedQuantity)
+        </td>
+        <td nowrap>
+            @Html.DisplayFor(modelItem => item.dUnitPrice)
+        </td>
+        <td nowrap>
+            @Html.DisplayFor(modelItem => item.dValue)
+        </td>
+
+        <td nowrap>
+            @Html.ActionLink("Edit", "Edit", new { id = item.idPOLine }, new { idInvoiceDetails = item.idPOLine, @class = "btn primary small editInvoiceDetails" }) 
+         @*   @Html.ActionLink("Details", "Details", new { id=item.InvoiceDetailsID }, new { @class = "btn"}) |*@
+            @Html.ActionLink("Delete", "Delete", new { id = item.idPOLine }, new { idInvoiceDetails = item.idPOLine, @class = "btn small deleteInvoiceDetails" })
+        </td>
+        @*<td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })
+        </td>*@
+    </tr>
+}
+
+</table>

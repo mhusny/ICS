@@ -1,0 +1,85 @@
+﻿@model ICS.Models.SUPPLIER
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>SUPPLIER</legend>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.iSupplierID)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.iSupplierID)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.cSupplierCode)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.cSupplierCode)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.cSupplierName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.cSupplierName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.cAddress1)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.cAddress1)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.cAddress2)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.cAddress2)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.cAddress3)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.cAddress3)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.cAddress4)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.cAddress4)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.cAddress5)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.cAddress5)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.cContactName)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.cContactName)
+    </div>
+
+    <div class="display-label">
+         @Html.DisplayNameFor(model => model.cContactDetails)
+    </div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.cContactDetails)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { /* id=Model.PrimaryKey */ }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

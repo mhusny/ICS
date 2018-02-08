@@ -1,0 +1,98 @@
+﻿@model ICS.Models.ARTICLE
+
+@{
+    ViewBag.Title = "Create";
+}
+
+<h2>Create</h2>
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>ARTICLE</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.iArticleID)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.iArticleID)
+            @Html.ValidationMessageFor(model => model.iArticleID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.cArticleCode)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.cArticleCode)
+            @Html.ValidationMessageFor(model => model.cArticleCode)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.cArticleDescription1)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.cArticleDescription1)
+            @Html.ValidationMessageFor(model => model.cArticleDescription1)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.cArticleDescription2)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.cArticleDescription2)
+            @Html.ValidationMessageFor(model => model.cArticleDescription2)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.iSeasonID)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownList("iSeasonID","Select Season")
+            @Html.ValidationMessageFor(model => model.iSeasonID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.cStyleDescription)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.cStyleDescription)
+            @Html.ValidationMessageFor(model => model.cStyleDescription)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.bActive)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.bActive)
+            @Html.ValidationMessageFor(model => model.bActive)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.cUOM)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.cUOM)
+            @Html.ValidationMessageFor(model => model.cUOM)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.dQtyInStock)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.dQtyInStock)
+            @Html.ValidationMessageFor(model => model.dQtyInStock)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+

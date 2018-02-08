@@ -1,0 +1,164 @@
+﻿@model ICS.Models.ORDER_HEADER
+
+@{
+    ViewBag.Title = DateTime.Now.Year + "#" + Model.iPOID.ToString() + " " + Model.cReference ;
+    Layout = "~/Views/Shared/_LayoutPrint.cshtml";
+}
+
+<table class="invoiceHeader">
+<tr>
+<td>
+ <img src="@Url.Content("~/Content/images/logo.png")" style="float:left;" />
+</td>
+<td style="text-align:right">
+ @*<h2>@string.Format(@Resources.Print.Invoice_Number, @Model.InvoiceNumber, DateTime.Now.Year)</h2> 
+  @Model.TimeStamp.ToLongDateString()*@
+</td>
+</tr>
+</table>
+
+
+<div class="from">
+    <blockquote>
+    <p>    <strong>
+    @ViewBag.MyCompany
+    </strong>
+    </p>
+
+    <p>
+    
+    Name: <strong>@ViewBag.CompanyNanme</strong>
+    </p>
+
+    <p>
+    @Html.Raw(ViewBag.Address.Replace(";","<br/>"))
+    </p>
+    <hr />
+    <p>
+    Phone: @ViewBag.Phone
+    </p>
+
+    <p>
+    @ViewBag.MyEmail
+    </p>
+
+    </blockquote>
+</div>
+
+
+
+ <table>
+ <tr>
+    <td width="65%">
+            <h3>Invoice_To :</h3>
+            <blockquote>
+            <p>
+                <strong>
+                    @Html.DisplayFor(model => model.supplier.cSupplierName)
+                </strong>
+            </p>
+
+            @*<p>
+                @Resources.Print.Invoice_CompanyNumber:
+                <strong>
+                    @Html.DisplayFor(model => model.Customer.CompanyNumber)
+                </strong>
+            </p>*@
+             <p>
+                @Html.DisplayFor(model => model.supplier.cAddress1)
+            </p>
+
+             <p>
+                @Html.DisplayFor(model => model.supplier.cAddress2), 
+                @Html.DisplayFor(model => model.supplier.cAddress3)
+            </p>	      
+            </blockquote>
+    </td>
+    @*<td>
+        <h3>@Resources.Print.Invoice_Service :</h3>
+         @Html.Raw(Model.Notes.Replace(Environment.NewLine,"<br/>"))
+    </td>*@
+ </tr>
+ </table>
+
+
+
+
+
+<table class="zebra-striped">
+    <thead>
+        <th>iArticleID
+        </th>
+
+        <th width="40">cArticleDescription2
+        </th>
+
+        <th width="40">Order Quantity
+        </th>
+
+        <th width="40">Recieved Quantity
+        </th>
+
+        <th width="40">dUnitPrice
+        </th>
+
+        <th width="40">dValue
+        </th>
+
+    </thead>
+
+
+    @foreach (var item in Model.details)
+{
+    var details = "invoiceDetail" + item.idPOLine;
+    <tr id="@details">
+        <td>
+            @Html.DisplayFor(modelitem => item.iArticleID)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelitem => item.cArticleDescription2)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelitem => item.dOrderQuantity)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelitem => item.dRecievedQuantity)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelitem => item.dUnitPrice)
+        </td>
+
+        <td>
+            @Html.DisplayFor(modelitem => item.dValue)
+        </td>
+
+    </tr> 
+}
+   <tr>
+       <td></td>
+       <td></td>
+       <td></td>
+       <td></td>
+       <td></td>
+       <td></td>
+   </tr>
+    <tfoot>
+        <tr>
+         <td class="invoiceFooterTitle">Total:</td>
+            <td></td>
+            <td >@Model.details.Sum(i=>i.dOrderQuantity)</td>
+            <td >@Model.details.Sum(i=>i.dRecievedQuantity)</td>
+            <td >@Model.details.Sum(i=>i.dUnitPrice)</td>
+            <td >@Model.details.Sum(i=>i.dValue)</td>
+            
+            @*<td>@String.Format("{0:C}", Model.details.NetTotal)</td>
+            <td>@String.Format("{0:C}", Model.details.VATAmount)</td>
+            <td>@String.Format("{0:C}", Model.details.TotalWithVAT)</td>*@
+           
+        </tr>
+    </tfoot>
+</table>

@@ -1,0 +1,53 @@
+﻿@model ICS.Models.USER
+
+
+@{
+    ViewBag.Title = "Login";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+<div class="container-fluid" id="login">
+<div class="span7">
+<div class="alert-message block-message info">
+@using (Html.BeginForm())
+{
+     @Html.ValidationSummary(true, "Login failed, Check you details");
+    <div>
+        <fieldset>
+            <legend>Login form</legend>
+
+            <div class="clearfix">
+                @Html.LabelFor(u => u.cUserName)
+                <div class="input">
+                    @Html.TextBoxFor(u => u.cUserName)
+                    @Html.ValidationMessageFor(u => u.cUserName)
+                </div>
+
+            </div>
+
+            <div class="clearfix">
+                @Html.LabelFor(u => u.cPassword)
+                <div class="input">
+                    @Html.PasswordFor(u => u.cPassword)
+                    @Html.ValidationMessageFor(u => u.cPassword)
+                </div>
+            </div>
+
+            <div class="actions">
+                <input type="submit" class="btn primary" value="Log In" />
+            </div>
+        </fieldset>
+    </div>
+
+}
+    </div>
+    </div>
+
+
+
+</div>
+
+
+
+    </div>

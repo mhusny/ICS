@@ -1,0 +1,45 @@
+﻿@model IEnumerable<ICS.Models.FACTORY>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.iFactoryID)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cFactoryCode)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.cFactoryDescription)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.iFactoryID)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cFactoryCode)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.cFactoryDescription)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.iFactoryID }) |
+            @Html.ActionLink("Details", "Details", new { id=item.iFactoryID  }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.iFactoryID  })
+        </td>
+    </tr>
+}
+
+</table>
